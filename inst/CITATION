@@ -1,0 +1,22 @@
+citHeader("To cite the original method in the 'nbc4va' package use (BioMed Central reference style):")
+
+citEntry(entry="Article",
+         title="Naive Bayes classifiers for verbal autopsies: comparison to physician-based classification for 21,000 child and adult deaths",
+         author=personList(
+                           as.person("Pierre Miasnikof"),
+                           as.person("Vasily Giannakeas"),
+                           as.person("Mireille Gomes"),
+                           as.person("Lukasz Aleksandrowicz"),
+                           as.person("Alexander Y. Shestopaloff"),
+                           as.person("Dewan Alam"),
+                           as.person("Stephen Tollman"),
+                           as.person("Akram Samarikhalaj"),
+                           as.person("Prabhat Jha")
+                          ),
+         journal="BMC Medicine",
+         year="2015",
+         volume="13",
+         number="286",
+         url="http://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2",
+         textVersion ="Miasnikof P, Giannakeas V, Gomes M, Aleksandrowicz L, Shestopaloff AY, Alam D, Tollman S, Samarikhalaj, Jha P. Naive Bayes classifiers for verbal autopsies: comparison to physician-based classification for 21,000 child and adult deaths. BMC Medicine. 2015;13:286. doi:10.1186/s12916-015-0521-2."
+)

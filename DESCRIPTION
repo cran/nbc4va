@@ -1,0 +1,22 @@
+Package: nbc4va
+Type: Package
+Title: Bayes Classifier for Verbal Autopsy Data
+Version: 1.0
+Date: 2016-07-10
+Author: Richard Wen <rwenite@gmail.com>
+Maintainer: Richard Wen <rwenite@gmail.com>
+Description: An implementation of the Naive Bayes Classifier (NBC) algorithm used for Verbal Autopsy (VA) built on code from Miasnikof et al (2015) <DOI:10.1186/s12916-015-0521-2>.
+Depends: R (>= 3.0.0)
+Imports: graphics, methods, utils
+Suggests: shiny, testthat
+Enhances: openVA
+License: GPL-3
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Collate: 'nbc4va.R' 'nbc4va_data.R' 'nbc4va_validation.R'
+        'nbc4va_internal.R' 'nbc4va_main.R' 'nbc4va_extra.R'
+        'nbc4va_help.R' 'nbc4va_utility.R' 'nbc4va_wrapper.R'
+NeedsCompilation: no
+Packaged: 2016-07-11 02:40:35 UTC; Rich
+Repository: CRAN
+Date/Publication: 2016-07-11 08:44:53
