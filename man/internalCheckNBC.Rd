@@ -7,7 +7,7 @@
 internalCheckNBC(train, test, known = TRUE, assume = FALSE, unknown = 99)
 }
 \arguments{
-\item{train}{Dataframe of verbal autopsy train data (See \code{\link{nbc4vaHelpData}}).
+\item{train}{Dataframe of verbal autopsy train data (See \href{https://rrwen.github.io/nbc4va/data}{Data documentation}).
 \itemize{
   \item Columns (in order): ID, Cause, Symptom-1 to Symptom-n..
   \item ID (vectorof char): unique case identifiers
@@ -79,4 +79,3 @@ test <- checked$test
 Other validation functions: \code{\link{internalCheckNBCSummary}}
 }
 \keyword{internal}
-

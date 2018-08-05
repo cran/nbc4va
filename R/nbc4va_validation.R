@@ -1,4 +1,5 @@
-# Richard Wen (rwenite@gmail.com)
+# Richard Wen
+# rrwen.dev@gmail.com
 # Code for validation functions in the nbc4va package.
 
 
@@ -18,7 +19,7 @@
 #'   \item have unique ids
 #' }
 #'
-#' @param train Dataframe of verbal autopsy train data (See \code{\link{nbc4vaHelpData}}).
+#' @param train Dataframe of verbal autopsy train data (See \href{https://rrwen.github.io/nbc4va/data}{Data documentation}).
 #' \itemize{
 #'   \item Columns (in order): ID, Cause, Symptom-1 to Symptom-n..
 #'   \item ID (vectorof char): unique case identifiers
@@ -68,8 +69,7 @@
 #' @keywords internal
 internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) {
 
-  # (Dataframe_Check) Check if dataframes are correctly formatted
-  # ----------------------------------------------------------------
+  # (Dataframe_Check) Check if dataframes are correctly formatted ----
 
   # (Check_train_DF) Check if train is in correct dataframe format
   if (!is.data.frame(train)) {
@@ -140,8 +140,7 @@ internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) 
     test[, 3:ncol(test)] <- testUK
   }
 
-  # (Symps_Check) Check the symptoms columns
-  # ----------------------------------------------------------------
+  # (Symps_Check) Check the symptoms columns ----
 
   # (Symps_Train) Check train symptoms are correct
   idx <- 3:ncol(train)
@@ -199,8 +198,7 @@ internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) 
     }
   }
 
-  # (Finalize) Check dimensions and return auto-cleaned inputs
-  # ----------------------------------------------------------------
+  # (Finalize) Check dimensions and return auto-cleaned inputs ----
 
   # (Dim_Check) Check dimensions consistency
   if (ncol(train) != ncol(test)) {
@@ -234,8 +232,8 @@ internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) 
 #' @details The following checks are applied:
 #' \itemize{
 #'   \item \emph{object} is of class "nbc"
-#'   \item \emph{top} is a numeric value
-#'   \item \emph{id} is NULL or a character, and exists in the test data
+#'   \item \emph{top} is a numeric value of length 1
+#'   \item \emph{id} is NULL or a character of length 1, and exists in the test data
 #'   \item \emph{csmfa.obs} is NULL or a character or vector of characters
 #' }
 #'
@@ -282,14 +280,20 @@ internalCheckNBCSummary <- function(object, top=5, id=NULL, csmfa.obs=NULL, ...)
   }
   if (!is.numeric(top)) {
     top <- as.numeric(top)
-    if (is.na(top)) {
+    if (length(top) > 1) {
+      stop("Argument top must be a single value.")
+    }
+    if (is.na(top)[[1]]) {
       stop("Argument top must be numeric.")
     }
     warning("Argument top has been converted to numeric.")
   }
   if (!is.character(id) && !is.null(id)) {
     id <- as.character(id)
-    if (is.na(id)) {
+    if (length(id) > 1) {
+      stop("Argument id must be a single value.")
+    }
+    if (is.na(id)[[1]]) {
       stop("Argument id must be a character.")
     }
     warning("Argument id has been converted to character.")
@@ -299,8 +303,10 @@ internalCheckNBCSummary <- function(object, top=5, id=NULL, csmfa.obs=NULL, ...)
   }
   if (!is.character(csmfa.obs) && !is.null(csmfa.obs)) {
     csmfa.obs <- as.character(csmfa.obs)
-    if (is.na(csmfa.obs)) {
-      stop("Argument csmfa.obs must be of character type.")
+    if (length(csmfa.obs) <= 1) {
+      if (is.na(csmfa.obs)[[1]]) {
+        stop("Argument csmfa.obs must be of character type.")
+      }
     }
     warning("Argument csmfa.obs has been converted to character.")
   }

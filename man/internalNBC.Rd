@@ -7,7 +7,7 @@
 internalNBC(train, test, known = TRUE)
 }
 \arguments{
-\item{train}{Dataframe of verbal autopsy train data (See \code{\link{nbc4vaHelpData}}).
+\item{train}{Dataframe of verbal autopsy train data (See \href{https://rrwen.github.io/nbc4va/data}{Data documentation}).
 \itemize{
   \item Columns (in order): ID, Cause, Symptom-1 to Symptom-n..
   \item ID (vectorof char): unique case identifiers
@@ -129,9 +129,6 @@ prob <- results$prob.causes
 pred <- results$pred.causes
 
 }
-\author{
-Pierre Miasnikof (Original), Vasily Giannakeas (Original), Richard Wen (Edits) <\email{wenr@smh.ca}>
-}
 \references{
 \itemize{
   \item Miasnikof P, Giannakeas V, Gomes M, Aleksandrowicz L, Shestopaloff AY, Alam D, Tollman S, Samarikhalaj, Jha P. Naive Bayes classifiers for verbal autopsies: comparison to physician-based classification for 21,000 child and adult deaths. BMC Medicine. 2015;13:286. doi:10.1186/s12916-015-0521-2.
@@ -143,5 +140,7 @@ Other internal functions: \code{\link{internalGetCSMFAcc}},
   \code{\link{internalGetCauseMetrics}},
   \code{\link{internalGetMetrics}}
 }
+\author{
+Pierre Miasnikof (Original), Vasily Giannakeas (Original), Richard Wen (Edits) <\email{wenr@smh.ca}>
+}
 \keyword{internal}
-

@@ -31,4 +31,3 @@ library(nbc4va)
 data(nbc4vaData)
 }
 \keyword{datasets}
-

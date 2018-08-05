@@ -14,7 +14,7 @@ internalGetCauseMetrics(pred, obs, causes = unique(c(pred, obs)))
 \item{causes}{Character vector of all possible causes including ones that are not in the \emph{pred} or \emph{obs}.}
 }
 \value{
-out Dataframe of a performance metrics per cause (see \code{\link{nbc4vaHelpMethods}}):
+out Dataframe of a performance metrics per cause (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}):
 \itemize{
   \item Columns: Cause, TruePositives, TrueNegatives, FalsePositives, FalseNegatives, PredictedFrequency, ObservedFrequency, Sensitivity, CSMFpredicted, CSMFobserved
   \item Cause (vectorof char): The unique causes from both the \emph{obs} and \emph{pred} inputs
@@ -55,4 +55,3 @@ Other internal functions: \code{\link{internalGetCSMFAcc}},
   \code{\link{internalNBC}}
 }
 \keyword{internal}
-

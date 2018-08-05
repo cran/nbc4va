@@ -7,7 +7,7 @@
 nbc(train, test, known = TRUE)
 }
 \arguments{
-\item{train}{Dataframe of verbal autopsy train data (See \code{\link{nbc4vaHelpData}}).
+\item{train}{Dataframe of verbal autopsy train data (See \href{https://rrwen.github.io/nbc4va/data}{Data documentation}).
 \itemize{
   \item Columns (in order): ID, Cause, Symptom-1 to Symptom-n..
   \item ID (vectorof char): unique case identifiers
@@ -126,4 +126,3 @@ Other main functions: \code{\link{plot.nbc}},
   \code{\link{print.nbc_summary}},
   \code{\link{summary.nbc}}
 }
-

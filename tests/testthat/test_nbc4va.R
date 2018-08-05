@@ -2,8 +2,8 @@
 # Tests for the external functions in the nbc4va package.
 
 
-# (Data) Generate some data used for test
-# ----------------------------------------------------------------
+# (Data) Generate some data used for test ----
+
 library(testthat)
 library(nbc4va)
 set.seed(1)
@@ -31,8 +31,7 @@ expect_warning(resultsRaw <- nbc(trainRaw, testRaw))
 noCauses <- test[, -2]
 expect_warning(resultsNoCauses <- nbc(train, noCauses, known=FALSE))
 
-# (nbc) Tests for the nbc() function
-# ----------------------------------------------------------------
+# (nbc) Tests for the nbc() function ----
 
 test_that("nbc() creates an object of class \"nbc\"", {
   expect_is(results, "nbc")
@@ -128,8 +127,7 @@ test_that("nbc() creates the correct outputs",{
   expect_equal(is.data.frame(results$prob), TRUE)
 })
 
-# (summary.nbc) Tests for the summary.nbc() function
-# ----------------------------------------------------------------
+# (summary.nbc) Tests for the summary.nbc() function ----
 
 test_that("summary.nbc() creates an object of class \"nbc_summary\"", {
   expect_warning(expect_is(summary(results), "nbc_summary"))

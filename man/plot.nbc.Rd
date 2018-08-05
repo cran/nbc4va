@@ -45,7 +45,7 @@ predicted Cause Specific Mortality Fraction (CSMF). \cr \cr
 \figure{plotnbcex.png}
 }
 \details{
-See \code{\link{nbc4vaHelpMethods}} for details on CSMF and CSMF accuracy.
+See \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation} for details on CSMF and CSMF accuracy.
 }
 \examples{
 library(nbc4va)
@@ -67,4 +67,3 @@ Other main functions: \code{\link{nbc}},
   \code{\link{print.nbc_summary}},
   \code{\link{summary.nbc}}
 }
-

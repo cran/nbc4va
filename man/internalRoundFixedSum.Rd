@@ -32,4 +32,3 @@ whole <- nbc4va:::internalRoundFixedSum(dec)
 Other data functions: \code{\link{internalSubAsRest}}
 }
 \keyword{internal}
-

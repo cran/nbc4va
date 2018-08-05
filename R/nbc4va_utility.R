@@ -1,4 +1,5 @@
-# Richard Wen (rwenite@gmail.com)
+# Richard Wen
+# rrwen.dev@gmail.com
 # Code for utility functions in the nbc4va package.
 
 
@@ -7,7 +8,7 @@
 #' Runs \code{\link{nbc}} and uses \code{\link{summary.nbc}} on input data files or dataframes to output
 #' result files or dataframes with data on predictions, probabilities, causes, and performance metrics in an easily accessible way.
 #'
-#' @details See \code{\link{nbc4vaHelpMethods}} for details on the methodology and implementation
+#' @details See \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation} for details on the methodology and implementation
 #' of the Naive Bayes Classifier algorithm. This function may also act as a wrapper for the
 #' main nbc4va package functions.
 #'

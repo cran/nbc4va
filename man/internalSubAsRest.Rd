@@ -75,4 +75,3 @@ clean <- nbc4va:::internalSubAsRest(unclean, 99)
 Other data functions: \code{\link{internalRoundFixedSum}}
 }
 \keyword{internal}
-

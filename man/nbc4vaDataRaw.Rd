@@ -34,4 +34,3 @@ library(nbc4va)
 data(nbc4vaDataRaw)
 }
 \keyword{datasets}
-

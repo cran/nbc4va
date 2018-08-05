@@ -1,4 +1,5 @@
-# Richard Wen (rwenite@gmail.com)
+# Richard Wen
+# rrwen.dev@gmail.com
 # Code for extra functions in the nbc4va package.
 
 
@@ -72,8 +73,8 @@
 #' @export
 ova2nbc <- function(symps.train, symps.test, causes.train, causes.table=NULL, ...) {
 
-  # (Setup_OVA) Ensure ova args meet reqs
-  # ----------------------------------------------------------------
+  # (Setup_OVA) Ensure ova args meet reqs ----
+
   # Modified code from Richard Li (lizehang@gmail.com)
 
   # (Default_Causes) Set causes.train depending on its data type
@@ -107,8 +108,7 @@ ova2nbc <- function(symps.train, symps.test, causes.train, causes.table=NULL, ..
   symps.test <- symps.test[, joint]
   symps.train <- symps.train[, joint]
 
-  # (Setup_NBC) Convert OVA args to nbc args
-  # ----------------------------------------------------------------
+  # (Setup_NBC) Convert OVA args to nbc args ----
 
   # (Setup_OrigInput) Setup original inputs for nbc code
   train <- symps.train

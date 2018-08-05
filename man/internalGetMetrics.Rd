@@ -33,7 +33,7 @@ internalGetMetrics(pred, obs, causes = unique(c(pred, obs)),
 }}
 }
 \value{
-metrics Named numeric vector of performance metrics (see \code{\link{nbc4vaHelpMethods}}):
+metrics Named numeric vector of performance metrics (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}):
 \itemize{
   \item Names: TruePositives, TrueNegatives, FalsePositives, FalseNegatives, Accuracy, Sensitivity, Specificity, PCCC, CSMFMaxError, CSMFaccuracy
   \item TruePositives (double): total number of true positives
@@ -66,4 +66,3 @@ Other internal functions: \code{\link{internalGetCSMFAcc}},
   \code{\link{internalNBC}}
 }
 \keyword{internal}
-

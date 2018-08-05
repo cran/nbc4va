@@ -77,4 +77,3 @@ pred <- results$pred.causes
   \item Li Z, McCormick T, Clark S. openVA: Automated Method for Verbal Autopsy [Internet]. 2016. [cited 2016 Apr 29]. Available from: \url{https://cran.r-project.org/package=openVA}
 }
 }
-

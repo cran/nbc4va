@@ -26,4 +26,3 @@ nbc4vaGUI()
 \seealso{
 Other utility functions: \code{\link{nbc4vaIO}}
 }
-

@@ -38,8 +38,8 @@ This function will perform automatic data type conversions, and display warnings
 The following checks are applied:
 \itemize{
   \item \emph{object} is of class "nbc"
-  \item \emph{top} is a numeric value
-  \item \emph{id} is NULL or a character, and exists in the test data
+  \item \emph{top} is a numeric value of length 1
+  \item \emph{id} is NULL or a character of length 1, and exists in the test data
   \item \emph{csmfa.obs} is NULL or a character or vector of characters
 }
 }
@@ -64,4 +64,3 @@ csmfa.obs <- checked$csmfa.obs
 Other validation functions: \code{\link{internalCheckNBC}}
 }
 \keyword{internal}
-

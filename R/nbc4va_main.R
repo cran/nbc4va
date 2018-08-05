@@ -1,4 +1,5 @@
-# Richard Wen (rwenite@gmail.com)
+# Richard Wen
+# rrwen.dev@gmail.com
 # Main functions code for nbc4va package.
 
 
@@ -108,7 +109,7 @@ nbc <- function(train, test, known=TRUE) {
 #' Summarizes the results from a \code{\link{nbc}} object. The summary
 #' can be either for a particular case or for the entirety of cases.
 #'
-#' @details See \code{\link{nbc4vaHelpMethods}} for details on calculations and metrics.
+#' @details See \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation} for details on calculations and metrics.
 #'
 #' @inheritParams internalGetMetrics
 #' @inheritParams internalCheckNBCSummary
@@ -256,7 +257,7 @@ summary.nbc <- function(object, top=5, id=NULL, csmfa.obs=NULL, ...) {
 #' the top causes by probability or predicted Cause Specific Mortality Fraction (CSMF). \cr \cr
 #' \figure{printnbcex.png}
 #'
-#' @details See \code{\link{nbc4vaHelpMethods}} for details on CSMF and probability from the Naive Bayes Classifier.
+#' @details See \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation} for details on CSMF and probability from the Naive Bayes Classifier.
 #'
 #' @param x A \code{\link{summary.nbc}} object.
 #' @param ... Additional arguments to be passed if applicable.
@@ -294,7 +295,7 @@ print.nbc_summary <- function(x, ...) {
 #' predicted Cause Specific Mortality Fraction (CSMF). \cr \cr
 #' \figure{plotnbcex.png}
 #'
-#' @details See \code{\link{nbc4vaHelpMethods}} for details on CSMF and CSMF accuracy.
+#' @details See \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation} for details on CSMF and CSMF accuracy.
 #'
 #' @inheritParams internalGetMetrics
 #' @param x A \code{\link{nbc}} object.
@@ -343,8 +344,7 @@ plot.nbc <- function(x,
                      border=NA,
                      las=1, ...) {
 
-  # (Data) Format the data for plotting
-  # ----------------------------------------------------------------
+  # (Data) Format the data for plotting ----
 
   # (Data_Plot) Obtain the plot data depending on if test cases are known
   predCSMF <- table(factor(x$pred.causes, levels=x$causes)) / length(x$pred.causes)
@@ -365,8 +365,7 @@ plot.nbc <- function(x,
   plotData$x <- rev(plotData$x)
   plotData$y <- rev(plotData$y)
 
-  # (Plot) Create the plot
-  # ----------------------------------------------------------------
+  # (Plot) Create the plot ----
 
   # (Adjust_Plot) Adjust cause label margins for length cause titles
   adj <- max(strwidth(as.character(plotData$y), "inch") + 0.4, na.rm = TRUE)

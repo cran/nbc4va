@@ -1,4 +1,5 @@
-# Richard Wen (rwenite@gmail.com)
+# Richard Wen
+# rrwen.dev@gmail.com
 # Code for internal functions in the nbc4va package.
 
 
@@ -112,8 +113,7 @@
 #' @keywords internal
 internalNBC <- function(train, test, known=TRUE){
 
-  # (Prepare) Prepare variables required for NBC
-  # ----------------------------------------------------------------
+  # (Prepare) Prepare variables required for NBC ----
 
   # (Check_Inputs) Check that inputs are correct
   checked <- internalCheckNBC(train, test, known=known)
@@ -141,8 +141,7 @@ internalNBC <- function(train, test, known=TRUE){
   causesNonTrain <- causes[!causes %in% causesTrain]
   symptoms <- names(train)[3:ncol(train)]
 
-  # (Run_Algorithm) Obtain NBC predictions and probabilities
-  # ----------------------------------------------------------------
+  # (Run_Algorithm) Obtain NBC predictions and probabilities ----
 
   # (Train_Symptom_Counts) Sum symptoms per train cause, zero sums for causes not in train
   trainSSZero <- matrix(0, length(causesNonTrain), length(symptoms), dimnames=list(causesNonTrain, symptoms))
@@ -180,8 +179,7 @@ internalNBC <- function(train, test, known=TRUE){
     pred[case, ] <- names(sort(caseProb, decreasing=TRUE))
   }
 
-  # (Format_Output) List to provide details of nbc algorithm
-  # ----------------------------------------------------------------
+  # (Format_Output) List to provide details of nbc algorithm ----
 
   # (Data_Conversion) Convert datatypes and structures to match output specifications
   trainIDs <- as.character(trainIDs)
@@ -256,7 +254,7 @@ internalNBC <- function(train, test, known=TRUE){
 #' @param pred Chracter vector of predicted causes for each case.
 #' @param obs Character vector of observed causes for each case.
 #' @param causes Character vector of all possible causes including ones that are not in the \emph{pred} or \emph{obs}.
-#' @return out Dataframe of a performance metrics per cause (see \code{\link{nbc4vaHelpMethods}}):
+#' @return out Dataframe of a performance metrics per cause (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}):
 #' \itemize{
 #'   \item Columns: Cause, TruePositives, TrueNegatives, FalsePositives, FalseNegatives, PredictedFrequency, ObservedFrequency, Sensitivity, CSMFpredicted, CSMFobserved
 #'   \item Cause (vectorof char): The unique causes from both the \emph{obs} and \emph{pred} inputs
@@ -292,8 +290,7 @@ internalGetCauseMetrics <- function(pred, obs, causes=unique(c(pred, obs))) {
     stop("The lengths of the predicted and observed data are not equal.")
   }
 
-  # (TrueFalse_PosNeg) Calculate t/f pos/neg as in Miaskinof et al (2015)
-  # ----------------------------------------------------------------
+  # (TrueFalse_PosNeg) Calculate t/f pos/neg as in Miaskinof et al (2015) ----
 
   # (Conf_Matrix) Create a confusion matrix of t/f pos/neg per cause
   metrics <- c("TruePositives", "TrueNegatives", "FalsePositives", "FalseNegatives")
@@ -321,8 +318,7 @@ internalGetCauseMetrics <- function(pred, obs, causes=unique(c(pred, obs))) {
     }
   }
 
-  # (Calculate_Metrics) Calculate performance metrics per cause
-  # ----------------------------------------------------------------
+  # (Calculate_Metrics) Calculate performance metrics per cause ----
 
   # (Frequencies) Include frequencies in table
   out <- data.frame(Cause=row.names(mx), mx, stringsAsFactors=FALSE)
@@ -361,7 +357,7 @@ internalGetCauseMetrics <- function(pred, obs, causes=unique(c(pred, obs))) {
 #' Calculates the CSMF maximum error given a set of observed cases.
 #'
 #' @inheritParams internalGetCauseMetrics
-#' @return csmfMaxError Numeric value of the CSMF maximum error (see \code{\link{nbc4vaHelpMethods}}).
+#' @return csmfMaxError Numeric value of the CSMF maximum error (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}).
 #'
 #' @examples
 #' library(nbc4va)
@@ -383,7 +379,7 @@ internalGetCSMFMaxError <- function(obs) {
 #' cases and any number of observed cases.
 #'
 #' @inheritParams internalGetCauseMetrics
-#' @return csmfa Numeric value of the overall CSMF accuracy (see \code{\link{nbc4vaHelpMethods}}).
+#' @return csmfa Numeric value of the overall CSMF accuracy (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}).
 #'
 #' @examples
 #' library(nbc4va)
@@ -429,7 +425,7 @@ internalGetCSMFAcc <- function(pred, obs) {
 #'   \item CSMFpredicted (vectorof double): the cause specific mortality fraction for a cause given the predicted deaths
 #'   \item CSMFobserved (vectorof double): the cause specific mortality fraction for a cause given the observed deaths
 #' }
-#' @return metrics Named numeric vector of performance metrics (see \code{\link{nbc4vaHelpMethods}}):
+#' @return metrics Named numeric vector of performance metrics (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}):
 #' \itemize{
 #'   \item Names: TruePositives, TrueNegatives, FalsePositives, FalseNegatives, Accuracy, Sensitivity, Specificity, PCCC, CSMFMaxError, CSMFaccuracy
 #'   \item TruePositives (double): total number of true positives

@@ -12,7 +12,7 @@ internalGetCSMFAcc(pred, obs)
 \item{obs}{Character vector of observed causes for each case.}
 }
 \value{
-csmfa Numeric value of the overall CSMF accuracy (see \code{\link{nbc4vaHelpMethods}}).
+csmfa Numeric value of the overall CSMF accuracy (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}).
 }
 \description{
 Calculates the overall CSMF accuracy given any number of predicted
@@ -32,4 +32,3 @@ Other internal functions: \code{\link{internalGetCSMFMaxError}},
   \code{\link{internalNBC}}
 }
 \keyword{internal}
-

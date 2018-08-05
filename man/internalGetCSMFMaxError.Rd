@@ -10,7 +10,7 @@ internalGetCSMFMaxError(obs)
 \item{obs}{Character vector of observed causes for each case.}
 }
 \value{
-csmfMaxError Numeric value of the CSMF maximum error (see \code{\link{nbc4vaHelpMethods}}).
+csmfMaxError Numeric value of the CSMF maximum error (see \href{https://rrwen.github.io/nbc4va/methods}{Methods documentation}).
 }
 \description{
 Calculates the CSMF maximum error given a set of observed cases.
@@ -28,4 +28,3 @@ Other internal functions: \code{\link{internalGetCSMFAcc}},
   \code{\link{internalNBC}}
 }
 \keyword{internal}
-
