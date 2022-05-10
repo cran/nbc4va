@@ -60,13 +60,14 @@
 #' # Check train and test inputs, error if it does not pass check
 #' train <- nbc4vaData[1:50, ]
 #' test <- nbc4vaData[51:100, ]
-#' checked <- nbc4va:::internalCheckNBC(train, test)
+#' checked <- nbc4va::internalCheckNBC(train, test)
 #' train <- checked$train
 #' test <- checked$test
 #'
 #' @importFrom methods is
 #' @family validation functions
 #' @keywords internal
+#' @export
 internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) {
 
   # (Dataframe_Check) Check if dataframes are correctly formatted ----
@@ -265,7 +266,7 @@ internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) 
 #' results <- nbc(train, test)
 #'
 #' # Check the inputs before passing on to summary
-#' checked <- nbc4va:::internalCheckNBCSummary(results, 5, "g85")
+#' checked <- nbc4va::internalCheckNBCSummary(results, 5, "g85")
 #' results <- checked$object
 #' top <- checked$top
 #' id <- checked$id
@@ -274,6 +275,7 @@ internalCheckNBC <- function(train, test, known=TRUE, assume=FALSE, unknown=99) 
 #' @importFrom methods is
 #' @family validation functions
 #' @keywords internal
+#' @export
 internalCheckNBCSummary <- function(object, top=5, id=NULL, csmfa.obs=NULL, ...) {
   if (!is(object, "nbc")) {
     stop("The object must be of type \"nbc\".")

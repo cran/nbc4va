@@ -29,5 +29,7 @@ predCSMF <- csmf.nbc(results)
 
 }
 \seealso{
-Other wrapper functions: \code{\link{topCOD.nbc}}
+Other wrapper functions: 
+\code{\link{topCOD.nbc}()}
 }
+\concept{wrapper functions}

@@ -8,11 +8,11 @@
 #' nbc4va: Bayes Classifier for Verbal Autopsy Data
 #'
 #' An implementation of the Naive Bayes Classifier (NBC) algorithm
-#' used for Verbal Autopsy (VA) built on code from \href{http://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof et al (2015)} <DOI:10.1186/s12916-015-0521-2>.
+#' used for Verbal Autopsy (VA) built on code from \href{https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof et al (2015)} <DOI:10.1186/s12916-015-0521-2>.
 #' \cr\cr
 #' For documentation and help, please see:
 #' \cr\cr
-#' \url{https://rrwen.github.io/nbc4va}
+#' \url{https://rrwen.github.io/nbc4va/}
 #'
 #' @section Acknowledgements:
 #' This package was developed at the Centre for Global Health Research (CGHR) in Toronto, Ontario, Canada. The original NBC algorithm code was developed by Pierre Miaskinof and Vasily Giannakeas.

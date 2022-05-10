@@ -1,8 +1,8 @@
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  nbc4vaGUI()
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)  # load the nbc4va package
 #  
 #  # View this help page as a vignette
@@ -30,15 +30,15 @@
 #  ?summary.nbc
 #  ?plot.nbc
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  citation("nbc4va")
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)  # load the package
 #  nbc4vaGUI()  # open the GUI in your web browser
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  
 #  # Find paths to your "trainFile" and "testFile"
@@ -50,11 +50,11 @@
 #  # Set "known"" to indicate whether testing causes are known
 #  nbc4vaIO(trainFile, testFile, known=TRUE)
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  ?nbc4vaIO
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  
 #  # Create training and testing dataframes
@@ -75,11 +75,11 @@
 #  head(prob)
 #  head(pred)
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  ?nbc
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  
 #  # Create training and testing dataframes
@@ -104,11 +104,11 @@
 #  metrics[["Sensitivity"]]
 #  View(causeMetrics)
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  ?summary.nbc
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  
 #  # Create training and testing data
@@ -121,11 +121,11 @@
 #  plot(results, top=5)
 #  plot(results, top=5, footnote=FALSE)  # remove footnote
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va)
 #  ?plot.nbc
 
-## ----eval=FALSE----------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  library(nbc4va) # load the nbc4va package
 #  data(nbc4vaData) # load the example data
 #  View(nbc4vaData) # view the sample data in the nbc4va package

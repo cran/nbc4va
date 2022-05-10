@@ -18,13 +18,15 @@ Calculates the CSMF maximum error given a set of observed cases.
 \examples{
 library(nbc4va)
 obs <- c("HIV", "HIV", "Stroke", "Stroke")
-maxerror <- nbc4va:::internalGetCSMFMaxError(obs)
+maxerror <- nbc4va::internalGetCSMFMaxError(obs)
 
 }
 \seealso{
-Other internal functions: \code{\link{internalGetCSMFAcc}},
-  \code{\link{internalGetCauseMetrics}},
-  \code{\link{internalGetMetrics}},
-  \code{\link{internalNBC}}
+Other internal functions: 
+\code{\link{internalGetCSMFAcc}()},
+\code{\link{internalGetCauseMetrics}()},
+\code{\link{internalGetMetrics}()},
+\code{\link{internalNBC}()}
 }
+\concept{internal functions}
 \keyword{internal}

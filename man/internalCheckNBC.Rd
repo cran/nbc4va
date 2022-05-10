@@ -70,12 +70,14 @@ data(nbc4vaData)
 # Check train and test inputs, error if it does not pass check
 train <- nbc4vaData[1:50, ]
 test <- nbc4vaData[51:100, ]
-checked <- nbc4va:::internalCheckNBC(train, test)
+checked <- nbc4va::internalCheckNBC(train, test)
 train <- checked$train
 test <- checked$test
 
 }
 \seealso{
-Other validation functions: \code{\link{internalCheckNBCSummary}}
+Other validation functions: 
+\code{\link{internalCheckNBCSummary}()}
 }
+\concept{validation functions}
 \keyword{internal}

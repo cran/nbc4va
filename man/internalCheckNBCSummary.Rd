@@ -53,7 +53,7 @@ test <- nbc4vaData[51:100, ]
 results <- nbc(train, test)
 
 # Check the inputs before passing on to summary
-checked <- nbc4va:::internalCheckNBCSummary(results, 5, "g85")
+checked <- nbc4va::internalCheckNBCSummary(results, 5, "g85")
 results <- checked$object
 top <- checked$top
 id <- checked$id
@@ -61,6 +61,8 @@ csmfa.obs <- checked$csmfa.obs
 
 }
 \seealso{
-Other validation functions: \code{\link{internalCheckNBC}}
+Other validation functions: 
+\code{\link{internalCheckNBC}()}
 }
+\concept{validation functions}
 \keyword{internal}

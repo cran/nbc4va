@@ -216,7 +216,7 @@ summary.nbc <- function(object, top=5, id=NULL, csmfa.obs=NULL, ...) {
     out$obs.causes <- object$obs.causes[id]
     out$prob.causes <- object$prob.causes[id]
     out$prob <- object$prob[object$prob[, 1] == id, ]
-    out$top.prob <- unlist(sort(out$prob[, 2:ncol(out$prob)], decreasing=TRUE)[1:top])
+    out$top.prob <- sort(unlist(out$prob[, 2:ncol(out$prob)]), decreasing=TRUE)[1:top]
     out$pred.causes <- object$pred.causes[id]
     out$pred <- object$pred[object$pred == id, ]
     out$obs <- object$obs[object$obs == id, ]
@@ -261,6 +261,7 @@ summary.nbc <- function(object, top=5, id=NULL, csmfa.obs=NULL, ...) {
 #'
 #' @param x A \code{\link{summary.nbc}} object.
 #' @param ... Additional arguments to be passed if applicable.
+#' @return Prints a summary of the top causes of death by probability for the NBC model.
 #'
 #' @examples
 #' library(nbc4va)
@@ -311,6 +312,7 @@ print.nbc_summary <- function(x, ...) {
 #' @param border A character value of the colors to use for the bar borders. Set to NA to disable.
 #' @param las An integer value to determine if labels should be parallel or perpendicular to axis.
 #' @param ... Additional arguments to be passed to \code{\link{barplot}}.
+#' @return Generates a bar plot the top predicted causes from the NBC model
 #'
 #'
 #' @examples
@@ -349,7 +351,7 @@ plot.nbc <- function(x,
   # (Data_Plot) Obtain the plot data depending on if test cases are known
   predCSMF <- table(factor(x$pred.causes, levels=x$causes)) / length(x$pred.causes)
   metrics <- data.frame(Cause=names(predCSMF), CSMFpredicted=as.numeric(predCSMF))
-  plotData <- data.frame(x=metrics$CSMFpredicted, y=metrics$Cause, stringsAsFactors=FALSE)
+  plotData <- data.frame(x=metrics$CSMFpredicted, y=metrics$Cause)
 
   # (Data_Filter) Filter by top.plot and min.csmf
   plotData <- plotData[plotData$x > min.csmf, ]  # filter to min.csmf
@@ -369,6 +371,8 @@ plot.nbc <- function(x,
 
   # (Adjust_Plot) Adjust cause label margins for length cause titles
   adj <- max(strwidth(as.character(plotData$y), "inch") + 0.4, na.rm = TRUE)
+  oldpar <- par(no.readonly=TRUE)
+  on.exit(par(oldpar))
   corners <- par("usr")  # xleft, xright, ybottom, ytop
 
   # (Footnotes_Plot) Include footnotes

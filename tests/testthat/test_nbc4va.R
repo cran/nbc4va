@@ -1,4 +1,4 @@
-# Richard Wen (rwenite@gmail.com)
+# Richard Wen (rrwen.dev@gmail.com)
 # Tests for the external functions in the nbc4va package.
 
 
@@ -26,10 +26,10 @@ trainRaw <- vaRaw[1:5, ]
 testRaw <- vaRaw[6:11, ]
 
 # (Results) Different example results
-expect_warning(results <- nbc(train, test))
+results <- nbc(train, test)
 expect_warning(resultsRaw <- nbc(trainRaw, testRaw))
 noCauses <- test[, -2]
-expect_warning(resultsNoCauses <- nbc(train, noCauses, known=FALSE))
+resultsNoCauses <- nbc(train, noCauses, known=FALSE)
 
 # (nbc) Tests for the nbc() function ----
 
@@ -43,7 +43,7 @@ test_that("nbc() can handle unknown symptoms", {
 
 test_that("nbc() sets the out$test.known to correctly indicate whether or not the test causes are known", {
   expect_equal(resultsNoCauses$test.known, FALSE)
-  expect_warning(expect_equal(length(unique(nbc4va:::internalCheckNBC(train, noCauses, known=FALSE)$test[, 2])), 1))
+  expect_equal(length(unique(nbc4va:::internalCheckNBC(train, noCauses, known=FALSE)$test[, 2])), 1)
   expect_equal(results$test.known, TRUE)
 })
 
@@ -53,21 +53,21 @@ test_that("nbc() can handle incorrect column data types in the correct positions
   trainTypes <- train
   trainTypes$sym1 <- as.character(train$sym1)
   trainTypes$causes <- as.factor(train$causes)
-  trainTypes$id <- as.numeric(train$id)
+  trainTypes$id <- as.factor(train$id)
   trainTypes$sym3 <- as.factor(train$sym3)
 
   # (test_Incorrect) Data with incorrect column data types in test
   testTypes <- test
   testTypes$sym1 <- as.character(test$sym1)
   testTypes$causes <- as.factor(test$causes)
-  testTypes$id <- as.numeric(test$id)
+  testTypes$id <- as.factor(test$id)
   testTypes$sym3 <- as.factor(test$sym3)
 
   # (Check_Types) If correct, warnings should display
   expect_warning(nbc4va:::internalCheckNBC(trainTypes, testTypes))
   expect_warning(nbc4va:::internalCheckNBC(train, testTypes))
 
-  # (Check_Type_Results) If correct, data types should be correctly convertted
+  # (Check_Type_Results) If correct, data types should be correctly converted
   expect_warning(resultsTypes <- nbc4va:::internalCheckNBC(trainTypes, testTypes))
   syms <- 3:ncol(resultsTypes$train)
   expect_equal(is.character(resultsTypes$train[, 1]), TRUE)

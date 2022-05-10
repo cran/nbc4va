@@ -4,11 +4,23 @@
 \alias{plot.nbc}
 \title{Bar plot of top predicted causes from a NBC model}
 \usage{
-\method{plot}{nbc}(x, top.plot = length(x$causes.pred), min.csmf = 0,
-  csmfa.obs = NULL, footnote = TRUE, footnote.color = "gray48",
-  footnote.size = 0.7, main = paste("Naive Bayes Classifier: Top ",
-  top.plot, " Causes by Predicted CSMF", sep = ""), xlab = "Predicted CSMF",
-  col = "dimgray", horiz = TRUE, border = NA, las = 1, ...)
+\method{plot}{nbc}(
+  x,
+  top.plot = length(x$causes.pred),
+  min.csmf = 0,
+  csmfa.obs = NULL,
+  footnote = TRUE,
+  footnote.color = "gray48",
+  footnote.size = 0.7,
+  main = paste("Naive Bayes Classifier: Top ", top.plot, " Causes by Predicted CSMF",
+    sep = ""),
+  xlab = "Predicted CSMF",
+  col = "dimgray",
+  horiz = TRUE,
+  border = NA,
+  las = 1,
+  ...
+)
 }
 \arguments{
 \item{x}{A \code{\link{nbc}} object.}
@@ -39,6 +51,9 @@
 
 \item{...}{Additional arguments to be passed to \code{\link{barplot}}.}
 }
+\value{
+Generates a bar plot the top predicted causes from the NBC model
+}
 \description{
 Plots the results from a \code{\link{nbc}} object as a \code{\link{barplot}} for a number of causes based on
 predicted Cause Specific Mortality Fraction (CSMF). \cr \cr
@@ -63,7 +78,9 @@ plot(results, top.plot=3)
 \seealso{
 \code{\link{barplot}}
 
-Other main functions: \code{\link{nbc}},
-  \code{\link{print.nbc_summary}},
-  \code{\link{summary.nbc}}
+Other main functions: 
+\code{\link{nbc}()},
+\code{\link{print.nbc_summary}()},
+\code{\link{summary.nbc}()}
 }
+\concept{main functions}

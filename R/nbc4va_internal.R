@@ -8,7 +8,7 @@
 #' Performs Naive Bayes Classification given train and test (validation) datasets, as well as
 #' additional information for the train and test data.
 #'
-#' @details This function was built on code provided by \href{http://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof \emph{et al} (2015)}.
+#' @details This function was built on code provided by \href{https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof \emph{et al} (2015)}.
 #' Edits to the code included the following improvements:
 #' \itemize{
 #'   \item Causes can be character type
@@ -101,7 +101,7 @@
 #' # Set "known" to indicate whether or not "test" causes are known
 #' train <- nbc4vaData[1:50, ]
 #' test <- nbc4vaData[51:100, ]
-#' results <- nbc4va:::internalNBC(train, test, known=TRUE)
+#' results <- nbc4va::internalNBC(train, test, known=TRUE)
 #'
 #' # Obtain the probabilities and predictions
 #' prob <- results$prob.causes
@@ -111,6 +111,7 @@
 #' @include nbc4va_validation.R
 #' @family internal functions
 #' @keywords internal
+#' @export
 internalNBC <- function(train, test, known=TRUE){
 
   # (Prepare) Prepare variables required for NBC ----
@@ -186,9 +187,9 @@ internalNBC <- function(train, test, known=TRUE){
   testIDs <- as.character(testIDs)
   trainCauses <- as.character(trainCauses)
   testCauses <- as.character(testCauses)
-  pred <- data.frame(CaseID=testIDs, TrueCause=testCauses, pred, row.names=NULL, stringsAsFactors = FALSE)
+  pred <- data.frame(CaseID=testIDs, TrueCause=testCauses, pred, row.names=NULL)
   pred[, 2:ncol(pred)] <- sapply(pred[, 2:ncol(pred)], as.character)
-  prob <- data.frame(CaseID=testIDs, prob, row.names=NULL, stringsAsFactors = FALSE)
+  prob <- data.frame(CaseID=testIDs, prob, row.names=NULL)
   prob[, 2:ncol(prob)] <- sapply(prob[, 2:ncol(prob)], as.numeric)
 
   # (Format_Causes) Include case ids in cause vectors
@@ -279,10 +280,11 @@ internalNBC <- function(train, test, known=TRUE){
 #' library(nbc4va)
 #' pred <- c("HIV", "Stroke", "HIV", "Stroke")
 #' obs <- c("HIV", "HIV", "Stroke", "Stroke")
-#' cmetrics <- nbc4va:::internalGetCauseMetrics(pred, obs)
+#' cmetrics <- nbc4va::internalGetCauseMetrics(pred, obs)
 #'
 #' @family internal functions
 #' @keywords internal
+#' @export
 internalGetCauseMetrics <- function(pred, obs, causes=unique(c(pred, obs))) {
 
   # (Unmatched_Error) Observed and predicted do not match up
@@ -321,7 +323,7 @@ internalGetCauseMetrics <- function(pred, obs, causes=unique(c(pred, obs))) {
   # (Calculate_Metrics) Calculate performance metrics per cause ----
 
   # (Frequencies) Include frequencies in table
-  out <- data.frame(Cause=row.names(mx), mx, stringsAsFactors=FALSE)
+  out <- data.frame(Cause=row.names(mx), mx)
   row.names(out) <- NULL
   out$PredictedFrequency <- as.numeric(table(factor(pred, levels=causes)))
   out$ObservedFrequency <- as.numeric(table(factor(obs, levels=causes)))
@@ -362,10 +364,11 @@ internalGetCauseMetrics <- function(pred, obs, causes=unique(c(pred, obs))) {
 #' @examples
 #' library(nbc4va)
 #' obs <- c("HIV", "HIV", "Stroke", "Stroke")
-#' maxerror <- nbc4va:::internalGetCSMFMaxError(obs)
+#' maxerror <- nbc4va::internalGetCSMFMaxError(obs)
 #'
 #' @family internal functions
 #' @keywords internal
+#' @export
 internalGetCSMFMaxError <- function(obs) {
   causes <- unique(obs)
   CSMFtruej <- table(factor(obs, levels=causes)) / length(obs)
@@ -385,10 +388,11 @@ internalGetCSMFMaxError <- function(obs) {
 #' library(nbc4va)
 #' pred <- c("HIV", "Stroke", "HIV", "Stroke")
 #' obs <- c("HIV", "HIV", "Stroke", "Stroke")
-#' csmfa <- nbc4va:::internalGetCSMFAcc(pred, obs)
+#' csmfa <- nbc4va::internalGetCSMFAcc(pred, obs)
 #'
 #' @family internal functions
 #' @keywords internal
+#' @export
 internalGetCSMFAcc <- function(pred, obs) {
 
   # (CSMF_TruePred) Calculate CSMF by cause for observed and predicted cases
@@ -442,11 +446,12 @@ internalGetCSMFAcc <- function(pred, obs) {
 #' library(nbc4va)
 #' pred <- c("HIV", "Stroke", "HIV", "Stroke")
 #' obs <- c("HIV", "HIV", "Stroke", "Stroke")
-#' metrics <- nbc4va:::internalGetMetrics(pred, obs)
+#' metrics <- nbc4va::internalGetMetrics(pred, obs)
 #'
 #' @importFrom methods is
 #' @family internal functions
 #' @keywords internal
+#' @export
 internalGetMetrics <- function(pred, obs, causes=unique(c(pred, obs)), csmfa.obs=NULL, causeMetrics=internalGetCauseMetrics(pred, obs, causes)) {
 
   # (Variables) Summary variables

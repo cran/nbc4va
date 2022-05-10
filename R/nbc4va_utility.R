@@ -102,7 +102,7 @@ nbc4vaIO <- function(trainFile,
                      fileHeader=strsplit(basename(testFile), "\\.")[[1]][[1]],
                      fileReader=read.csv,
                      fileReaderIn="file",
-                     fileReaderArgs=list(as.is=TRUE, stringsAsFactors=FALSE),
+                     fileReaderArgs=list(as.is=TRUE),
                      fileWriter=write.csv,
                      fileWriterIn="x",
                      fileWriterOut="file",
@@ -192,9 +192,10 @@ nbc4vaIO <- function(trainFile,
 
 #' Web-based graphical user interface in nbc4va
 #'
-#' A Graphical User Interface (GUI) for the nbc4va package using \href{http://shiny.rstudio.com/}{shiny}. \cr \cr
+#' A Graphical User Interface (GUI) for the nbc4va package using \href{https://shiny.rstudio.com/}{shiny}. \cr \cr
 #' \figure{nbcguiex.png}
 #'
+#' @return Creates a GUI for running nbc4va in a web browser.
 #' @details This function requires the shiny package, which can be installed via: \cr \cr
 #' \code{install.packages("shiny")} \cr \cr
 #' Use \emph{esc} in the R console to stop the GUI. \cr \cr
@@ -210,9 +211,9 @@ nbc4vaIO <- function(trainFile,
 #' @family utility functions
 #' @export
 nbc4vaGUI <- function() {
-  if (!requireNamespace("shiny", quietly=TRUE)) {
-    install.packages("shiny", dependencies=TRUE, repos="http://cran.rstudio.com/")
-  }
+  #if (!requireNamespace("shiny", quietly=TRUE)) {
+  #  install.packages("shiny", dependencies=TRUE, repos="http://cran.rstudio.com/")
+  #}
   shiny::runApp(system.file('nbc4vagui', package='nbc4va'), launch.browser=TRUE)
 }
 

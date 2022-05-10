@@ -4,8 +4,13 @@
 \alias{internalSubAsRest}
 \title{Substitute values in a dataframe proportionally to all other values}
 \usage{
-internalSubAsRest(dataset, x, cols = 1:ncol(dataset), ignore = c(NA, NaN),
-  removal = FALSE)
+internalSubAsRest(
+  dataset,
+  x,
+  cols = 1:ncol(dataset),
+  ignore = c(NA, NaN),
+  removal = FALSE
+)
 }
 \arguments{
 \item{dataset}{A dataframe with value(s) of \emph{x} in it.}
@@ -68,10 +73,12 @@ Pseudocode of algorithm:
 library(nbc4va)
 data(nbc4vaDataRaw)
 unclean <- nbc4vaDataRaw
-clean <- nbc4va:::internalSubAsRest(unclean, 99)
+clean <- nbc4va::internalSubAsRest(unclean, 99)
 
 }
 \seealso{
-Other data functions: \code{\link{internalRoundFixedSum}}
+Other data functions: 
+\code{\link{internalRoundFixedSum}()}
 }
+\concept{data functions}
 \keyword{internal}

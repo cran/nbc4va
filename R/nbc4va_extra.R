@@ -78,7 +78,7 @@ ova2nbc <- function(symps.train, symps.test, causes.train, causes.table=NULL, ..
   # Modified code from Richard Li (lizehang@gmail.com)
 
   # (Default_Causes) Set causes.train depending on its data type
-  if (class(causes.train) == "character" && length(causes.train) == 1) {  # If char
+  if (is(causes.train, "character") && length(causes.train) == 1) {  # If char
     colindex <- match(causes.train, colnames(symps.train))  # COD col
     if (is.na(colindex)) {
       stop("Cannot find the cause-of-death column in train data.")
@@ -86,7 +86,7 @@ ova2nbc <- function(symps.train, symps.test, causes.train, causes.table=NULL, ..
     causes.train <- symps.train[, colindex]
     testSympsStart <- 3  # test causes assumed known
 
-  } else if (class(causes.train) == "character" && length(causes.train) == nrow(symps.train)) {  # If (vectorof char)
+  } else if (is(causes.train, "character") && length(causes.train) == nrow(symps.train)) {  # If (vectorof char)
 
     # (Add_TrainCauses) Add causes col to the train data in pos 2
     symps.train[ncol(symps.train) + 1] <- causes.train

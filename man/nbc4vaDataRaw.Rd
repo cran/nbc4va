@@ -4,7 +4,8 @@
 \name{nbc4vaDataRaw}
 \alias{nbc4vaDataRaw}
 \title{Example of unclean data in nbc4va}
-\format{A dataframe with 100 rows and 102 columns:
+\format{
+A dataframe with 100 rows and 102 columns:
 \itemize{
   \item id (vectorof char): the case identifiers
   \item cause (vectorof char): the cause of death for each case
@@ -16,7 +17,8 @@
     "k37" \tab "cause2" \tab 0 \tab 99 \tab 1\cr
     "e57" \tab "cause8" \tab 1 \tab 0 \tab 99
   }
-}}
+}
+}
 \source{
 Random generation using the \code{\link{sample}} function with \code{\link{set.seed}} set to 1.
 }

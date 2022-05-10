@@ -122,7 +122,9 @@ pred <- results$pred.causes
 }
 }
 \seealso{
-Other main functions: \code{\link{plot.nbc}},
-  \code{\link{print.nbc_summary}},
-  \code{\link{summary.nbc}}
+Other main functions: 
+\code{\link{plot.nbc}()},
+\code{\link{print.nbc_summary}()},
+\code{\link{summary.nbc}()}
 }
+\concept{main functions}

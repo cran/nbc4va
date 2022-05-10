@@ -4,9 +4,13 @@
 \alias{internalGetMetrics}
 \title{Calculate overall performance metrics}
 \usage{
-internalGetMetrics(pred, obs, causes = unique(c(pred, obs)),
-  csmfa.obs = NULL, causeMetrics = internalGetCauseMetrics(pred, obs,
-  causes))
+internalGetMetrics(
+  pred,
+  obs,
+  causes = unique(c(pred, obs)),
+  csmfa.obs = NULL,
+  causeMetrics = internalGetCauseMetrics(pred, obs, causes)
+)
 }
 \arguments{
 \item{pred}{Chracter vector of predicted causes for each case.}
@@ -56,13 +60,15 @@ Developer Note: Depends on the \code{\link{internalGetCSMFAcc}} function to get 
 library(nbc4va)
 pred <- c("HIV", "Stroke", "HIV", "Stroke")
 obs <- c("HIV", "HIV", "Stroke", "Stroke")
-metrics <- nbc4va:::internalGetMetrics(pred, obs)
+metrics <- nbc4va::internalGetMetrics(pred, obs)
 
 }
 \seealso{
-Other internal functions: \code{\link{internalGetCSMFAcc}},
-  \code{\link{internalGetCSMFMaxError}},
-  \code{\link{internalGetCauseMetrics}},
-  \code{\link{internalNBC}}
+Other internal functions: 
+\code{\link{internalGetCSMFAcc}()},
+\code{\link{internalGetCSMFMaxError}()},
+\code{\link{internalGetCauseMetrics}()},
+\code{\link{internalNBC}()}
 }
+\concept{internal functions}
 \keyword{internal}

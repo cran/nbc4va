@@ -103,7 +103,7 @@ Performs Naive Bayes Classification given train and test (validation) datasets, 
 additional information for the train and test data.
 }
 \details{
-This function was built on code provided by \href{http://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof \emph{et al} (2015)}.
+This function was built on code provided by \href{https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof \emph{et al} (2015)}.
 Edits to the code included the following improvements:
 \itemize{
   \item Causes can be character type
@@ -122,7 +122,7 @@ data(nbc4vaData)
 # Set "known" to indicate whether or not "test" causes are known
 train <- nbc4vaData[1:50, ]
 test <- nbc4vaData[51:100, ]
-results <- nbc4va:::internalNBC(train, test, known=TRUE)
+results <- nbc4va::internalNBC(train, test, known=TRUE)
 
 # Obtain the probabilities and predictions
 prob <- results$prob.causes
@@ -135,12 +135,14 @@ pred <- results$pred.causes
 }
 }
 \seealso{
-Other internal functions: \code{\link{internalGetCSMFAcc}},
-  \code{\link{internalGetCSMFMaxError}},
-  \code{\link{internalGetCauseMetrics}},
-  \code{\link{internalGetMetrics}}
+Other internal functions: 
+\code{\link{internalGetCSMFAcc}()},
+\code{\link{internalGetCSMFMaxError}()},
+\code{\link{internalGetCauseMetrics}()},
+\code{\link{internalGetMetrics}()}
 }
 \author{
 Pierre Miasnikof (Original), Vasily Giannakeas (Original), Richard Wen (Edits) <\email{wenr@smh.ca}>
 }
+\concept{internal functions}
 \keyword{internal}

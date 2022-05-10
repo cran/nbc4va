@@ -11,6 +11,9 @@
 
 \item{...}{Additional arguments to be passed if applicable.}
 }
+\value{
+Prints a summary of the top causes of death by probability for the NBC model.
+}
 \description{
 Prints a summary message from a \code{\link{summary.nbc}} object of
 the top causes by probability or predicted Cause Specific Mortality Fraction (CSMF). \cr \cr
@@ -34,6 +37,9 @@ print(brief)
 
 }
 \seealso{
-Other main functions: \code{\link{nbc}},
-  \code{\link{plot.nbc}}, \code{\link{summary.nbc}}
+Other main functions: 
+\code{\link{nbc}()},
+\code{\link{plot.nbc}()},
+\code{\link{summary.nbc}()}
 }
+\concept{main functions}

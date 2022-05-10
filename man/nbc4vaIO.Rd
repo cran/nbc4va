@@ -4,13 +4,23 @@
 \alias{nbc4vaIO}
 \title{Run nbc4va using file input and output}
 \usage{
-nbc4vaIO(trainFile, testFile, known = TRUE, csmfaFile = NULL,
-  saveFiles = TRUE, outDir = dirname(testFile),
+nbc4vaIO(
+  trainFile,
+  testFile,
+  known = TRUE,
+  csmfaFile = NULL,
+  saveFiles = TRUE,
+  outDir = dirname(testFile),
   fileHeader = strsplit(basename(testFile), "\\\\.")[[1]][[1]],
-  fileReader = read.csv, fileReaderIn = "file",
-  fileReaderArgs = list(as.is = TRUE, stringsAsFactors = FALSE),
-  fileWriter = write.csv, fileWriterIn = "x", fileWriterOut = "file",
-  fileWriterArgs = list(row.names = FALSE), outExt = "csv")
+  fileReader = read.csv,
+  fileReaderIn = "file",
+  fileReaderArgs = list(as.is = TRUE),
+  fileWriter = write.csv,
+  fileWriterIn = "x",
+  fileWriterOut = "file",
+  fileWriterArgs = list(row.names = FALSE),
+  outExt = "csv"
+)
 }
 \arguments{
 \item{trainFile}{A character value of the path to the data to be used as the \emph{train} argument for \code{\link{nbc}} or a dataframe of the \emph{train} argument.}
@@ -117,5 +127,7 @@ out <- nbc4vaIO(train, test, known=TRUE, saveFiles=FALSE)
 
 }
 \seealso{
-Other utility functions: \code{\link{nbc4vaGUI}}
+Other utility functions: 
+\code{\link{nbc4vaGUI}()}
 }
+\concept{utility functions}

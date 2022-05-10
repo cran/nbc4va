@@ -6,8 +6,11 @@
 \usage{
 nbc4vaGUI()
 }
+\value{
+Creates a GUI for running nbc4va in a web browser.
+}
 \description{
-A Graphical User Interface (GUI) for the nbc4va package using \href{http://shiny.rstudio.com/}{shiny}. \cr \cr
+A Graphical User Interface (GUI) for the nbc4va package using \href{https://shiny.rstudio.com/}{shiny}. \cr \cr
 \figure{nbcguiex.png}
 }
 \details{
@@ -24,5 +27,7 @@ nbc4vaGUI()
 
 }
 \seealso{
-Other utility functions: \code{\link{nbc4vaIO}}
+Other utility functions: 
+\code{\link{nbc4vaIO}()}
 }
+\concept{utility functions}

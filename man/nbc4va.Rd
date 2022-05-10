@@ -3,15 +3,14 @@
 \docType{package}
 \name{nbc4va}
 \alias{nbc4va}
-\alias{nbc4va-package}
 \title{nbc4va: Bayes Classifier for Verbal Autopsy Data}
 \description{
 An implementation of the Naive Bayes Classifier (NBC) algorithm
-used for Verbal Autopsy (VA) built on code from \href{http://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof et al (2015)} <DOI:10.1186/s12916-015-0521-2>.
+used for Verbal Autopsy (VA) built on code from \href{https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2}{Miasnikof et al (2015)} <DOI:10.1186/s12916-015-0521-2>.
 \cr\cr
 For documentation and help, please see:
 \cr\cr
-\url{https://rrwen.github.io/nbc4va}
+\url{https://rrwen.github.io/nbc4va/}
 }
 \section{Acknowledgements}{
 

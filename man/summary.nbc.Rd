@@ -100,6 +100,9 @@ briefID <- summary(results, id="v48")  # top 5 causes by probability for case "v
 
 }
 \seealso{
-Other main functions: \code{\link{nbc}},
-  \code{\link{plot.nbc}}, \code{\link{print.nbc_summary}}
+Other main functions: 
+\code{\link{nbc}()},
+\code{\link{plot.nbc}()},
+\code{\link{print.nbc_summary}()}
 }
+\concept{main functions}

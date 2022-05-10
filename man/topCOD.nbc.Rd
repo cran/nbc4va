@@ -34,5 +34,7 @@ topPreds <- topCOD.nbc(results)
 
 }
 \seealso{
-Other wrapper functions: \code{\link{csmf.nbc}}
+Other wrapper functions: 
+\code{\link{csmf.nbc}()}
 }
+\concept{wrapper functions}

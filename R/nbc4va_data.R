@@ -109,10 +109,11 @@
 #' library(nbc4va)
 #' data(nbc4vaDataRaw)
 #' unclean <- nbc4vaDataRaw
-#' clean <- nbc4va:::internalSubAsRest(unclean, 99)
+#' clean <- nbc4va::internalSubAsRest(unclean, 99)
 #'
 #' @family data functions
 #' @keywords internal
+#' @export
 internalSubAsRest <- function(dataset, x, cols=1:ncol(dataset), ignore=c(NA, NaN), removal=FALSE) {
   if (length(x) != 1) stop(x, " is not a valid value (length must equal 1).")
 
@@ -164,7 +165,7 @@ internalSubAsRest <- function(dataset, x, cols=1:ncol(dataset), ignore=c(NA, NaN
 
 #' Round values to whole numbers while preserving the sum
 #'
-#' Rounds a vector of values to whole numbers while preserving the sum (rounded if it is not a whole number) using the largest remainder method \href{https://www.tcd.ie/Political_Science/staff/michael_gallagher/ElectoralStudies1991.pdf}{(Gallagher, 1991)}.
+#' Rounds a vector of values to whole numbers while preserving the sum (rounded if it is not a whole number) using the largest remainder method \href{https://www.tcd.ie/Political_Science/people/michael_gallagher/ElectoralStudies1991.pdf}{(Gallagher, 1991)}.
 #'
 #' @param v A vector of values with decimal values and a whole number sum to round.
 #' @param roundSum If the sum of the values in \emph{v} is not a whole number, choose a rounding method to ensure it is a whole number.
@@ -178,11 +179,12 @@ internalSubAsRest <- function(dataset, x, cols=1:ncol(dataset), ignore=c(NA, NaN
 #' @examples
 #' library(nbc4va)
 #' dec <- c(rep(50/2, 2), rep(50/3, 3))
-#' whole <- nbc4va:::internalRoundFixedSum(dec)
+#' whole <- nbc4va::internalRoundFixedSum(dec)
 #'
 #' @importFrom utils tail
 #' @family data functions
 #' @keywords internal
+#' @export
 internalRoundFixedSum <- function (v, roundSum=round) {
   if (all(v%%1 == 0)) {
     out <- v

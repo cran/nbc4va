@@ -311,7 +311,7 @@ This section provides an organized list of the available functions in the nbc4va
 
 ## Utility Functions
 
-* **nbc4vaGUI**: web-based graphical user interface using [shiny](http://shiny.rstudio.com/)
+* **nbc4vaGUI**: web-based graphical user interface using [shiny](https://shiny.rstudio.com/)
 * **nbc4vaIO**: convenient file input and output of model results
 
 ## Main Functions
@@ -429,13 +429,13 @@ The nbc4va package implements the NBC algorithm for verbal autopsy data using co
 
 ## Terms for Metrics
 
-**True Positives**: The number of cases, given a cause, where the predicted cause is equal to the actual observed cause [(Fawcett, 2005)](http://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
+**True Positives**: The number of cases, given a cause, where the predicted cause is equal to the actual observed cause [(Fawcett, 2005)](https://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
 
-**True Negatives**: The number of cases, given a cause, where the predicted is not the cause and the actual observed is also not the cause [(Fawcett, 2005)](http://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
+**True Negatives**: The number of cases, given a cause, where the predicted is not the cause and the actual observed is also not the cause [(Fawcett, 2005)](https://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
 
-**False Positives**: The number of cases, given a cause, where the predicted is the cause and the actual observed is not the cause [(Fawcett, 2005)](http://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
+**False Positives**: The number of cases, given a cause, where the predicted is the cause and the actual observed is not the cause [(Fawcett, 2005)](https://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
 
-**False Negatives**: The number of cases, given a cause, where the predicted is not the cause and the actual observed is the cause [(Fawcett, 2005)](http://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
+**False Negatives**: The number of cases, given a cause, where the predicted is not the cause and the actual observed is the cause [(Fawcett, 2005)](https://people.inf.elte.hu/kiss/13dwhdm/roc.pdf).
 
 **CSMF**: The fraction of deaths (predicted or observed) for a particular cause.
 
@@ -498,7 +498,7 @@ where:
 
 ## References for Methods
 
-* Fawcett T. An introduction to ROC analysis. Pattern Recognition Letters[Internet]. 2005 Dec 19[cited 2016 Apr 29];27(8):861-874. Available from: http://people.inf.elte.hu/kiss/13dwhdm/roc.pdf
+* Fawcett T. An introduction to ROC analysis. Pattern Recognition Letters[Internet]. 2005 Dec 19[cited 2016 Apr 29];27(8):861-874. Available from: https://people.inf.elte.hu/kiss/13dwhdm/roc.pdf
 * Miasnikof P, Giannakeas V, Gomes M, Aleksandrowicz L, Shestopaloff AY, Alam D, Tollman S, Samarikhalaj, Jha P. Naive Bayes classifiers for verbal autopsies: comparison to physician-based classification for 21,000 child and adult deaths. BMC Medicine. 2015;13:286. [10.1186/s12916-015-0521-2](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-015-0521-2).
 * Murray CJL, Lozano R, Flaxman AD, Vahdatpour A, Lopez AD. Robust metrics for assessing the performance of different verbal autopsy cause assignment methods in validation studies.Popul Health Metr. 2011;9:28. [10.1186/1478-7954-9-28](https://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-9-28).
 * Powers DMW. EVALUATION: FROM PRECISION, RECALL AND F-MEASURE TO ROC, INFORMEDNESS, MARKEDNESS & CORRELATION. Journal of Machine Learning Technologies. 2011;2(1)37-63.
